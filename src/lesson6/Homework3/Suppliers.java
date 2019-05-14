@@ -1,4 +1,4 @@
-package sql.lesson6.Homework3;
+package lesson6.Homework3;
 
 public class Suppliers {
     long supplierId;

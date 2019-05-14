@@ -2,14 +2,14 @@ CREATE TABLE AUTHOR(
 ID NUMBER,
     --PRIMARY KEY - (NOT NULL && UNIQUE)
 CONSTRAINT AUTHOR_PK PRIMARY KEY(ID),
-    --NOT NULL - значение не может буть пустое
+    --NOT NULL - Р·РЅР°С‡РµРЅРёРµ РЅРµ РјРѕР¶РµС‚ Р±СѓС‚СЊ РїСѓСЃС‚РѕРµ
 NAME NVARCHAR2(50) NOT NULL,
-    --UNIQUE - значение должно быть уникальное
+    --UNIQUE - Р·РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ СѓРЅРёРєР°Р»СЊРЅРѕРµ
 LAST_NAME NVARCHAR2(50) UNIQUE,   
-    --DEFAULT - значение по умолчанию если не указано значение
+    --DEFAULT - Р·РЅР°С‡РµРЅРёРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РµСЃР»Рё РЅРµ СѓРєР°Р·Р°РЅРѕ Р·РЅР°С‡РµРЅРёРµ
 COUNTRY NVARCHAR2(50) DEFAULT 'ENGLAND',
 AGE NUMBER DEFAULT 0,
-    --CHECK() - значение с условием
+    --CHECK() - Р·РЅР°С‡РµРЅРёРµ СЃ СѓСЃР»РѕРІРёРµРј
 ARTICAL_COUNT NUMBER CHECK(ARTICAL_COUNT > 10),
 CONSTRAINT CHECK_COUNTRY CHECK(COUNTRY != 'CHINA' AND LAST_NAME!= 'TEST_LN')
 )h

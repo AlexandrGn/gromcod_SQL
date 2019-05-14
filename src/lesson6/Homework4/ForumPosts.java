@@ -15,7 +15,8 @@ public class ForumPosts {
     private Date date;
     private long ip;
 
-    public ForumPosts(long id, ForumSubcategories forumSubcategories, ForumCategories forumCategories, ForumPosts parrentForumPosts, String title, String content, boolean isPoll, Date date, long ip) {
+    public ForumPosts(long id, ForumSubcategories forumSubcategories, ForumCategories forumCategories,
+                      ForumPosts parentForumPosts, String title, String content, boolean isPoll, Date date, long ip) {
         this.id = id;
         this.forumSubcategories = forumSubcategories;
         this.forumCategories = forumCategories;

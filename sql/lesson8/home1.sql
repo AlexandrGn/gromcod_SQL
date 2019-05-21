@@ -1,0 +1,33 @@
+-- Удаляет последние три колонки из таблицы Employees
+ALTER TABLE EMPLOYEES
+  DROP COLUMN PHOTO;
+
+ALTER TABLE EMPLOYEES
+  DROP COLUMN NOTES;
+
+ALTER TABLE EMPLOYEES
+  DROP COLUMN REPORTS_TO;
+
+--Измененяет PK таблицы Suppliers с SupplierID на Phone
+ALTER TABLE PRODUCTS
+DROP CONSTRAINT CATEGORY_FK;
+
+ALTER TABLE SUPPLIERS
+DROP PRIMARY KEY ;
+
+ALTER TABLE SUPPLIERS
+ADD CONSTRAINT SUPPLIERS_PK PRIMARY KEY (Phone);
+
+ALTER TABLE PRODUCTS
+ADD CONSTRAINT SUPPLIERS_FK FOREIGN KEY(SUPPLIER_ID) REFERENCES SUPPLIERS(PHONE);
+
+
+-- Добавляет в таблицу Customers колонку IS_ACTIVE, которая должна принимать одно из двух значений - 0 или 1 и не быть пустой
+ALTER TABLE CUSTOMERS
+ADD IS_ACTIVE NUMBER DEFAULT 0 NOT NULL CHECK (IS_ACTIVE=0 OR IS_ACTIVE=1);
+
+
+-- Обновите длину поля Picture в таблице Categories до 100 символов
+ALTER TABLE CATEGORIES
+MODIFY CATEGORY_NAME NVARCHAR2(150);
+--у меня поле Picture типа BFILE, поменять на NVARCHAR2(150) не удастся

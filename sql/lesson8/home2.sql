@@ -1,0 +1,6 @@
+CREATE SEQUENCE MY_FIRST_SEQUENCE
+  start with 1
+  increment by 3;
+
+SELECT MY_FIRST_SEQUENCE.currval FROM dual;
+SELECT MY_FIRST_SEQUENCE.nextval FROM dual;
